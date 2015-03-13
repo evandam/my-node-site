@@ -1,0 +1,26 @@
+{
+  "name": "mysite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/evandam/my-node-site.git"
+  },
+  "keywords": [
+    "evan",
+    "van",
+    "dam",
+    "node",
+    "js"
+  ],
+  "author": "Evan Van Dam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/evandam/my-node-site/issues"
+  },
+  "homepage": "https://github.com/evandam/my-node-site"
+}
