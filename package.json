@@ -1,6 +1,5 @@
 {
   "name": "mysite",
-<<<<<<< HEAD
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -16,29 +15,3 @@
     "serve-favicon": "~2.2.0"
   }
 }
-=======
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/evandam/my-node-site.git"
-  },
-  "keywords": [
-    "evan",
-    "van",
-    "dam",
-    "node",
-    "js"
-  ],
-  "author": "Evan Van Dam",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/evandam/my-node-site/issues"
-  },
-  "homepage": "https://github.com/evandam/my-node-site"
-}
->>>>>>> 8b1ae7b584ca340154501f96a73e76f586792d67

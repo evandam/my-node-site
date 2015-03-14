@@ -1,5 +1,19 @@
 extends layout
+include mixins/article.jade
+include mixins/form_input.jade
 
 block content
-  h1= title
-  p Welcome to #{title}
+  +article('contact', articles.contact)
+    form(method='post')
+        each field in form
+            +input(field.type, 
+                field.name, 
+                field.label, 
+                field.placeholder,
+                field.value,
+                field.error
+            )
+        button(class='btn btn-default', type='submit') Send
+
+            
+    

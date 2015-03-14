@@ -1,0 +1,11 @@
+mixin input(type, name, label, placeholder, value, error)
+    .form-group(class=error ? 'has-warning has-feedback' : '')
+        label.control-label(for=name)= error ? error : label
+        case type
+            when 'textArea'
+                textArea.form-control(id=name, name=name, placeholder=placeholder)= value
+            default
+                input.form-control(id=name, name=name, placeholder=placeholder, value=value)
+        if error
+            span.form-control-feedback(class='glyphicon glyphicon-warning-sign', aria-hidden)
+            span.sr-only(id=name) (warning)
