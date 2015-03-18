@@ -3,30 +3,16 @@ html
   head
     title= title
     meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
-    // link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel='stylesheet', href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css')
-    script(src='http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js')
+    script(src='http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js')
     script(src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js')
-    
-    include mixins/variables.jade
+    block scripts
+    - var articles = {'about':'About Me', 'portfolio':'Portfolio', 'work':'Work Experience', 'contact':'Contact Me'}
     
   body
-    nav(class='navbar navbar-default')
-        .container-fluid
-            .navbar-header
-                button(type='button', 
-                        class='navbar-toggle collapsed', 
-                        data-toggle='collapse', data-target='#navbar', 
-                        aria-expanded='false', aria-controls='navbar')
-                    span.sr-only Toggle Navigation
-                    each i in [1, 2, 3]
-                        span.icon-bar
-                a.navbar-brand(href='#'): strong EVAN VAN DAM
-            #navbar(class='navbar-collapse collapse')
-                ul(class='nav navbar-nav')
-                    each nav_title, nav_id in articles
-                        li: a(href=nav_id)= nav_title
-    .container-fluid                
+    include partials/navbar.jade
+    .container                
         block content
         
         

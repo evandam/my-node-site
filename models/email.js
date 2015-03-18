@@ -1,6 +1,12 @@
 var validator = require('validator');
 var nodemailer = require('nodemailer');
-var transporter = nodemailer.createTransport();
+// var mailer_auth = require('./mailer_auth');
+
+// maintain one mail transporter for all instances
+var transporter = nodemailer.createTransport({
+    service: 'Gmail',
+    auth: { } /*mailer_auth*/
+});
 
 // constructor
 function Email(from, to, subject, body) {
@@ -10,8 +16,9 @@ function Email(from, to, subject, body) {
     this.body = new Email.prototype.Field(body);
 }
 
+// send email
 Email.prototype.send = function() {
-  transporter.sendMail({
+    transporter.sendMail({
       from: this.from.value,
       to: this.to.value,
       subject: this.subject.value,
@@ -35,6 +42,7 @@ Email.prototype.validate = function() {
     return isValid;
 };
     
+// each field for the Email object consists of a value and possibly an error message
 Email.prototype.Field = function(val, err) {
     this.value = val;
     this.error = err ? err : '';
@@ -59,6 +67,14 @@ Email.prototype.generateForm = function() {
     ];
 };
 
-module.exports = {
-    model: Email,
+// save values of fields to database
+Email.prototype.persist = function() {
+    return {
+        from : this.from.value,
+        to : this.to.value,
+        subject : this.subject.value,
+        body : this.body.value
+    }
 };
+
+module.exports = Email;

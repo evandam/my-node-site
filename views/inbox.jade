@@ -1,0 +1,14 @@
+extends layout.jade
+block content
+    table.table
+        thead
+            tr
+                th From
+                th Subject
+                th Message
+        tbody
+            each email in emails
+                tr
+                    td= email.from
+                    td= email.subject
+                    td= email.body

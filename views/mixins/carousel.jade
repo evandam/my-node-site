@@ -1,0 +1,21 @@
+include glyphicon.jade
+
+mixin carousel(id, items)
+    .carousel(id=id, class='slide center-block', data-ride='carousel')
+        ol.carousel-indicators
+            each item, i in items
+                li(data-target='#'+id, data-slide-to=i class= i === 0 ? 'active' : '')
+        .carousel-inner(role='listbox')
+            each item, i in items
+                .item(class= i === 0 ? 'active' : '')
+                    img.img-responsive(src=item.img, alt=item.title, class='center-block')
+                    .carousel-caption
+                        p= item.caption
+        
+        a.carousel-control(class='left', href='#'+id, role='button', data-slide='prev')
+            +glyph('chevron-left')
+            span.sr-only Previous
+        a.carousel-control(class='right', href='#'+id, role='button', data-slide='next')
+            +glyph('chevron-right')
+            span.sr-only Next
+            

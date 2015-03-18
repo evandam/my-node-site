@@ -1,19 +1,22 @@
 extends layout
 include mixins/article.jade
-include mixins/form_input.jade
+include mixins/carousel.jade
+
+block scripts
+    script(src='javascripts/index.js')
 
 block content
-  +article('contact', articles.contact)
-    form(method='post')
-        each field in form
-            +input(field.type, 
-                field.name, 
-                field.label, 
-                field.placeholder,
-                field.value,
-                field.error
-            )
-        button(class='btn btn-default', type='submit') Send
+    +article('about', articles.about)
+        img.profile(class='img-responsive img-circle inline center-block', src='images/profile.jpg')
+        p.lead.
+            I graduated from #[a(href='http://www.marist.edu/'): strong Marist College]
+            in 2014, majoring in #[strong Computer Science] with a concentration in 
+            #[strong Game Design and Programming] and a minor in #[strong Information Technology].
 
-            
+        h3 These are some of the things that I'm good at
+        +carousel('carousel', carouselItems)
+    
+    +article('contact', articles.contact)
+        include partials/contactForm.jade
+    
     

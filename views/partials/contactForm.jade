@@ -1,0 +1,14 @@
+include ../mixins/glyphicon.jade
+include ../mixins/input.jade
+
+form(action='/mail' method='post')
+    each field in form
+        +input(field.type, 
+            field.name, 
+            field.label, 
+            field.placeholder,
+            field.value,
+            field.error
+        )
+    button(class='btn btn-default', type='submit') 
+        +glyph('envelope')  Send
