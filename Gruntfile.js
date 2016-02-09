@@ -88,7 +88,7 @@ module.exports = function (grunt) {
   });
 
   grunt.registerTask('serve', function() {
-    require('./server/server');
+    require('./server');
     this.async();
   });
 
