@@ -2,11 +2,23 @@
 
 let
   express = require('express'),
-  bodyParser = require('body-parser');
+  bodyParser = require('body-parser'),
+  path = require('path'),
+  PORT = process.env.PORT || 3000,
+  STATIC = path.join(__dirname, 'web', 'dist');
 var
   app = express();
 
 app.use(bodyParser.json());
+app.use(express.static(STATIC));
+// Html5Mode
+app.all('/*', function(req, res) {
+  res.sendFile(path.join(STATIC, 'index.html'));
+});
+
+app.listen(PORT, function() {
+  console.log('express listening on port %s', PORT);
+});
 
 function handleResponse(error, out, res) {
   if (error) {
@@ -16,18 +28,3 @@ function handleResponse(error, out, res) {
     res.send(out);
   }
 }
-
-module.exports = {
-  init: function(config) {
-    app.use(express.static(config.static));
-    // define other routes handleResponse
-
-    // Html5Mode
-    app.all('/*', function(req, res) {
-      res.sendFile(config.static + '/index.html');
-    });
-    app.listen(config.port, function() {
-      console.log('express listening on port %s', config.port);
-    });
-  }
-};

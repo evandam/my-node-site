@@ -14,11 +14,7 @@ module.exports = function (grunt) {
     app: {
       src: 'web/src',
       dist: 'web/dist',
-      tmp: 'web/tmp',
-      server: {
-        port: 3000,
-        static: __dirname + '/<%= app.dist %>'
-      }
+      tmp: 'web/tmp'
     },
     clean: {
       tmp: ['<%= app.tmp %>'],
@@ -93,7 +89,6 @@ module.exports = function (grunt) {
 
   grunt.registerTask('serve', function() {
     let server = require('./server/server');
-    server.init(grunt.config.get('app.server'));
     this.async();
   });
 
