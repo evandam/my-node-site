@@ -5,7 +5,7 @@ let
   bodyParser = require('body-parser'),
   path = require('path'),
   PORT = process.env.PORT || 3000,
-  STATIC = path.join(__dirname, 'web', 'dist');
+  STATIC = path.join(__dirname, '..', 'web', 'dist');
 var
   app = express();
 
