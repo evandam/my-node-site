@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <base href="/">
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div ev-navbar="Evan Van Dam">
+        <!-- Transclude right navbar. Rest generated dynamically. -->
+        <li>
+          <a href="mailto:evandam92@gmail.com" target="_blank">
+            <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+            <span class="sr-only">Email</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/evandam" target="_blank">
+            <img src="/images/github.png" aria-hidden="true">
+            <span class="sr-only">GitHub</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/evanvandam" target="_blank">
+            <img src="/images/linkedin.png" aria-hidden="true">
+            <span class="sr-only">LinkedIn</span>
+          </a>
+        </li>
+      </div>
+      <div ui-view></div>
+    </div>
+    <footer>
+      <script src="bower_components/requirejs/require.js" data-main="js/compiled.js"></script>
+      <script src="//localhost:35729/livereload.js"></script>
+    </footer>
+  </body>
+</html>

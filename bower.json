@@ -1,0 +1,31 @@
+{
+  "name": "mysite",
+  "description": "personal website for Evan Van Dam",
+  "main": "app.js",
+  "authors": [
+    "Evan Van Dam"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/evandam/my-node-site",
+  "moduleType": [
+    "amd",
+    "node"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "web/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "angular": "^1.4.9",
+    "jquery": "^2.2.0",
+    "requirejs": "^2.1.22",
+    "angular-bootstrap": "^1.1.2",
+    "angular-ui-router": "^0.2.17"
+  }
+}
