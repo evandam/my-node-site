@@ -93,7 +93,7 @@ module.exports = function (grunt) {
   });
 
   grunt.registerTask('build', ['clean', 'copy', 'compass', 'requirejs']);
-
+  grunt.registerTask('heroku', 'build');
   grunt.registerTask('default', ['build', 'concurrent']);
 
 };
