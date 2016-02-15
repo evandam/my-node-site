@@ -1,7 +1,7 @@
 define([
   'angular',
-  'app.config',
-  './navbar/module',
+  './app.config',
+  './shared/navbar/module',
   'angular-bootstrap',
   'angular-ui-router'
 ], function (angular, config, navbar) {

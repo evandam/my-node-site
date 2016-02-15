@@ -4,8 +4,8 @@ define([], function() {
     $urlRouterProvider.otherwise('/');
     $stateProvider
       .state('about', {
-        url: '/about',
-        templateUrl: 'views/about.html',
+        url: '/',
+        templateUrl: 'components/about/about.html',
         title: 'About Me'
       })
       .state('work', {
@@ -14,7 +14,7 @@ define([], function() {
       })
       .state('contact', {
         url: '/contact',
-        templateUrl: 'views/contact.html',
+        templateUrl: 'components/contact/contact.html',
         title: 'Contact Me'
       });
   };

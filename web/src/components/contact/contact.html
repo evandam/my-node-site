@@ -1,0 +1,29 @@
+<div class="page-header">
+  <h1>Contact Me</h1>
+</div>
+<div>
+  <p class="lead">
+    Send me a message and I'll get back to you as soon as I can!
+  </p>
+  <form>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input ng-model="contact.email" class="form-control" type="email" id="email">
+    </div>
+    <div class="form-group">
+      <label for="subject">Subject</label>
+      <input ng-model="contact.subject" class="form-control" id="subject">
+    </div>
+    <div class="form-group">
+      <label for="message">Message</label>
+      <div class="input-group">
+        <textarea ng-model="contact.message" class="form-control" id="message"></textarea>
+        <span class="input-group-addon">
+          <button type="submit" class="btn btn-primary">Send
+            <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+          </button>
+        </span>
+      </div>
+    </div>
+  </form>
+</div>

@@ -23,8 +23,8 @@ module.exports = function (grunt) {
     compass: {
       dist: {
         options: {
-          sassDir: '<%= app.src %>/sass',
-          cssDir: '<%= app.dist %>/css'
+          sassDir: '<%= app.src %>/assets/sass',
+          cssDir: '<%= app.dist %>'
         }
       }
     },
@@ -41,9 +41,9 @@ module.exports = function (grunt) {
         dest: '<%= app.dist %>',
         expand: true
       },
-      misc: {
+      assets: {
         cwd: '<%= app.src %>',
-        src: 'images/**',
+        src: 'assets/**',
         dest: '<%= app.dist %>',
         expand: true
       }
@@ -57,10 +57,10 @@ module.exports = function (grunt) {
     requirejs: {
       compile: {
         options: {
-          mainConfigFile: '<%= app.src %>/js/main.js',
+          mainConfigFile: '<%= app.src %>/main.js',
           name: 'main',
-          out: '<%= app.dist %>/js/compiled.js',
-          optimizer: 'none'
+          out: '<%= app.dist %>/compiled.js',
+          optimize: 'none'
         }
       }
     },

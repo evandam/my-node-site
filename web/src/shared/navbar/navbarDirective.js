@@ -2,7 +2,7 @@ define([], function() {
   function directive($state) {
     return {
       restrict: 'AE',
-      templateUrl: '/views/navbar.html',
+      templateUrl: '/shared/navbar/navbar.html',
       transclude: true,
       scope: {
         title: '@evNavbar'
