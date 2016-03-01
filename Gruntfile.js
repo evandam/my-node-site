@@ -41,6 +41,12 @@ module.exports = function (grunt) {
         dest: '<%= app.dist %>',
         expand: true
       },
+      scripts: {
+        cwd: '<%= app.src %>',
+        src: ['**/*.js'],
+        dest: '<%= app.dist %>',
+        expand: true
+      },
       assets: {
         cwd: '<%= app.src %>',
         src: 'assets/**',
@@ -67,7 +73,7 @@ module.exports = function (grunt) {
     watch: {
       scripts: {
         files: ['<%= app.src %>/**/*.js'],
-        tasks: ['requirejs']
+        tasks: ['copy:scripts']
       },
       html: {
         files: ['<%= app.src %>/**/*.html'],
@@ -92,7 +98,7 @@ module.exports = function (grunt) {
     this.async();
   });
 
-  grunt.registerTask('build', ['clean', 'copy', 'compass', 'requirejs']);
+  grunt.registerTask('build', ['clean', 'copy', 'compass']);
   grunt.registerTask('heroku:development', ['build']);
   grunt.registerTask('heroku:production', ['heroku:development']);
   grunt.registerTask('default', ['build', 'concurrent']);
