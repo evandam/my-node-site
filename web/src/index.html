@@ -8,32 +8,31 @@
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
   </head>
   <body>
-    <div class="container-fluid">
-      <div ev-navbar="Evan Van Dam">
-        <!-- Transclude right navbar. Rest generated dynamically. -->
-        <li>
-          <a href="mailto:evandam92@gmail.com" target="_blank">
-            <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
-            <span class="sr-only">Email</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://github.com/evandam" target="_blank">
-            <img src="assets/images/github.png" aria-hidden="true">
-            <span class="sr-only">GitHub</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://www.linkedin.com/in/evanvandam" target="_blank">
-            <img src="assets/images/linkedin.png" aria-hidden="true">
-            <span class="sr-only">LinkedIn</span>
-          </a>
-        </li>
-      </div> <!-- end navbar -->
-      <div ui-view></div>
-    </div>
+    <div ev-navbar="Evan Van Dam">
+      <!-- Transclude right navbar. Rest generated dynamically. -->
+      <li>
+        <a href="mailto:evandam92@gmail.com" target="_blank">
+          <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+          <span class="sr-only">Email</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/evandam" target="_blank">
+          <img src="assets/images/github.png" aria-hidden="true">
+          <span class="sr-only">GitHub</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/in/evanvandam" target="_blank">
+          <img src="assets/images/linkedin.png" aria-hidden="true">
+          <span class="sr-only">LinkedIn</span>
+        </a>
+      </li>
+    </div> <!-- end navbar -->
+    <div class="container" ui-view></div>
     <footer>
       <script src="bower_components/requirejs/require.js" data-main="main.js"></script>
+      <script src="//localhost:35729/livereload.js"></script>
     </footer>
   </body>
 </html>

@@ -36,3 +36,4 @@ data/
 # Other stuff
 .sass-cache/
 web/dist
+web/src/bower_components
