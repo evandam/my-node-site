@@ -99,7 +99,7 @@ module.exports = function (grunt) {
   });
 
   grunt.registerTask('build', ['clean', 'copy', 'compass']);
-  grunt.registerTask('default', ['build']);
+  grunt.registerTask('default', ['clean', 'copy']);
   grunt.registerTask('local', ['build', 'concurrent']);
 
 };
